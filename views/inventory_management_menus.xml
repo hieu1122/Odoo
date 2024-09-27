@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="inventory_management_menu" name="Inventory Management"/>
+    <menuitem id="inventory_item_menu" name="Inventory Items" parent="inventory_management_menu" action="inventory_item_action"/>
+    <menuitem id="inventory_location_menu" name="Inventory Locations" parent="inventory_management_menu" action="inventory_location_action"/>
+    <menuitem id="inventory_movement_menu" name="Inventory Movements" parent="inventory_management_menu" action="inventory_movement_action"/>
+</odoo>
