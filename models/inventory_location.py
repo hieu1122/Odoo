@@ -7,3 +7,4 @@ class InventoryLocation(models.Model):
     name = fields.Char(string='Location Name', required=True)
     address = fields.Char(string='Address')
     capacity = fields.Integer(string='Capacity')
+    user_id=fields.Many2one('res.users', string='User')

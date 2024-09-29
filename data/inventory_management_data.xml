@@ -44,29 +44,6 @@
             <field name="capacity" eval="200"/>
         </record>
 
-        <!-- Sample data for Inventory Movements -->
-        <record id="inventory_movement_1" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_laptop"/>
-            <field name="quantity" eval="10"/>
-            <field name="source_location_id" ref="inventory_location_warehouse"/>
-            <field name="destination_location_id" ref="inventory_location_store"/>
-            <field name="movement_date" eval="time.utctime('%Y-%m-%d %H:%M:%S')"/>
-        </record>
 
-        <record id="inventory_movement_2" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_smartphone"/>
-            <field name="quantity" eval="15"/>
-            <field name="source_location_id" ref="inventory_location_store"/>
-            <field name="destination_location_id" ref="inventory_location_warehouse"/>
-            <field name="movement_date" eval="time.utctime('%Y-%m-%d %H:%M:%S')"/>
-        </record>
-
-        <record id="inventory_movement_3" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_tablet"/>
-            <field name="quantity" eval="5"/>
-            <field name="source_location_id" ref="inventory_location_office"/>
-            <field name="destination_location_id" ref="inventory_location_warehouse"/>
-            <field name="movement_date" eval="time.utctime('%Y-%m-%d %H:%M:%S')"/>
-        </record>
     </data>
 </odoo>

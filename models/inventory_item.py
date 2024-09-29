@@ -9,3 +9,4 @@ class InventoryItem(models.Model):
     quantity = fields.Integer(string='Quantity', required=True, default=0)
     unit_of_measure = fields.Char(string='Unit of Measure')
     reorder_level = fields.Integer(string='Reorder Level')
+    user_id=fields.Many2one('res.users', string='User')
