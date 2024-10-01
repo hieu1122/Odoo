@@ -1,49 +1,230 @@
 <odoo>
     <data noupdate="1">
-        <!-- Sample data for Inventory Items -->
-        <record id="inventory_item_laptop" model="inventory.item">
-            <field name="name">Laptop</field>
-            <field name="description">A personal computer that is portable and suitable for use while traveling.</field>
-            <field name="quantity" eval="50"/>
+        <!-- Dữ liệu cho Inventory Item -->
+        <record id="inventory_item_1" model="inventory.item">
+            <field name="name">Laptop Dell XPS 13</field>
+            <field name="description">Laptop cao cấp với thiết kế mỏng nhẹ và hiệu suất mạnh mẽ.</field>
+            <field name="quantity">10</field>
             <field name="unit_of_measure">pcs</field>
-            <field name="reorder_level" eval="10"/>
-        </record>
+            <field name="reorder_level">5</field>
 
-        <record id="inventory_item_smartphone" model="inventory.item">
-            <field name="name">Smartphone</field>
-            <field name="description">A handheld personal computer that can make phone calls.</field>
-            <field name="quantity" eval="100"/>
+        </record>
+        <record id="inventory_item_2" model="inventory.item">
+            <field name="name">Apple iPhone 14</field>
+            <field name="description">Điện thoại thông minh với camera chất lượng cao và hiệu năng ổn định.</field>
+            <field name="quantity">20</field>
             <field name="unit_of_measure">pcs</field>
-            <field name="reorder_level" eval="20"/>
-        </record>
+            <field name="reorder_level">10</field>
 
-        <record id="inventory_item_tablet" model="inventory.item">
-            <field name="name">Tablet</field>
-            <field name="description">A portable touchscreen computer.</field>
-            <field name="quantity" eval="30"/>
+        </record>
+        <record id="inventory_item_3" model="inventory.item">
+            <field name="name">Máy tính bảng Samsung Galaxy Tab S8</field>
+            <field name="description">Máy tính bảng mạnh mẽ với màn hình AMOLED sắc nét và bút S Pen.</field>
+            <field name="quantity">15</field>
             <field name="unit_of_measure">pcs</field>
-            <field name="reorder_level" eval="15"/>
+            <field name="reorder_level">7</field>
+
+        </record>
+        <record id="inventory_item_4" model="inventory.item">
+            <field name="name">Tai nghe Sony WH-1000XM4</field>
+            <field name="description">Tai nghe không dây với công nghệ khử tiếng ồn và âm thanh chất lượng cao.</field>
+            <field name="quantity">25</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">10</field>
+
+        </record>
+        <record id="inventory_item_5" model="inventory.item">
+            <field name="name">Bộ sạc Anker PowerPort III</field>
+            <field name="description">Bộ sạc nhanh với nhiều cổng USB cho điện thoại và máy tính bảng.</field>
+            <field name="quantity">30</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">15</field>
+
+        </record>
+        <record id="inventory_item_6" model="inventory.item">
+            <field name="name">Đồng hồ thông minh Garmin Venu 2</field>
+            <field name="description">Đồng hồ thông minh với các chức năng theo dõi sức khỏe và thể dục.</field>
+            <field name="quantity">12</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">6</field>
+
+        </record>
+        <record id="inventory_item_7" model="inventory.item">
+            <field name="name">Chuột Logitech MX Master 3</field>
+            <field name="description">Chuột không dây cao cấp với thiết kế ergonomic và nhiều tính năng.</field>
+            <field name="quantity">18</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">8</field>
+
+        </record>
+        <record id="inventory_item_8" model="inventory.item">
+            <field name="name">Bàn phím cơ Corsair K95 RGB</field>
+            <field name="description">Bàn phím cơ với đèn RGB và nhiều tính năng tùy chỉnh.</field>
+            <field name="quantity">20</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">10</field>
+
+        </record>
+        <record id="inventory_item_9" model="inventory.item">
+            <field name="name">Màn hình Dell UltraSharp 27"</field>
+            <field name="description">Màn hình chất lượng cao với độ phân giải 4K và công nghệ IPS.</field>
+            <field name="quantity">5</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">3</field>
+
+        </record>
+        <record id="inventory_item_10" model="inventory.item">
+            <field name="name">Loa Bose SoundLink Revolve</field>
+            <field name="description">Loa Bluetooth di động với âm thanh 360 độ và thời gian sử dụng lâu.</field>
+            <field name="quantity">8</field>
+            <field name="unit_of_measure">pcs</field>
+            <field name="reorder_level">4</field>
+
         </record>
 
-        <!-- Sample data for Inventory Locations -->
-        <record id="inventory_location_warehouse" model="inventory.location">
-            <field name="name">Main Warehouse</field>
-            <field name="address">123 Warehouse St, City, Country</field>
-            <field name="capacity" eval="1000"/>
+        <!-- Dữ liệu cho Inventory Location -->
+        <record id="inventory_location_1" model="inventory.location">
+            <field name="name">Kho Chính</field>
+            <field name="address">Số 123, Đường ABC, Thành phố XYZ</field>
+            <field name="capacity">200</field>
+
+        </record>
+        <record id="inventory_location_2" model="inventory.location">
+            <field name="name">Kho Phụ</field>
+            <field name="address">Số 456, Đường DEF, Thành phố XYZ</field>
+            <field name="capacity">150</field>
+
+        </record>
+        <record id="inventory_location_3" model="inventory.location">
+            <field name="name">Kho Tạm</field>
+            <field name="address">Số 789, Đường GHI, Thành phố XYZ</field>
+            <field name="capacity">100</field>
+
+        </record>
+        <record id="inventory_location_4" model="inventory.location">
+            <field name="name">Kho Điện Tử</field>
+            <field name="address">Số 101, Đường JKL, Thành phố XYZ</field>
+            <field name="capacity">250</field>
+
+        </record>
+        <record id="inventory_location_5" model="inventory.location">
+            <field name="name">Kho Thiết Bị Văn Phòng</field>
+            <field name="address">Số 202, Đường MNO, Thành phố XYZ</field>
+            <field name="capacity">120</field>
+
+        </record>
+        <record id="inventory_location_6" model="inventory.location">
+            <field name="name">Kho Hàng Trả Lại</field>
+            <field name="address">Số 303, Đường PQR, Thành phố XYZ</field>
+            <field name="capacity">80</field>
+
+        </record>
+        <record id="inventory_location_7" model="inventory.location">
+            <field name="name">Kho Hàng Mới Nhập</field>
+            <field name="address">Số 404, Đường STU, Thành phố XYZ</field>
+            <field name="capacity">300</field>
+
+        </record>
+        <record id="inventory_location_8" model="inventory.location">
+            <field name="name">Kho Hàng Thời Vụ</field>
+            <field name="address">Số 505, Đường VWX, Thành phố XYZ</field>
+            <field name="capacity">70</field>
+
+        </record>
+        <record id="inventory_location_9" model="inventory.location">
+            <field name="name">Kho Hàng Đặc Biệt</field>
+            <field name="address">Số 606, Đường YZ, Thành phố XYZ</field>
+            <field name="capacity">90</field>
+
+        </record>
+        <record id="inventory_location_10" model="inventory.location">
+            <field name="name">Kho Hàng Sản Xuất</field>
+            <field name="address">Số 707, Đường 123, Thành phố XYZ</field>
+            <field name="capacity">400</field>
+
         </record>
 
-        <record id="inventory_location_store" model="inventory.location">
-            <field name="name">Main Store</field>
-            <field name="address">456 Store Ave, City, Country</field>
-            <field name="capacity" eval="500"/>
-        </record>
+        <!-- Dữ liệu cho Inventory Movement -->
+        <!-- Dữ liệu cho Inventory Movement -->
+        <record id="inventory_movement_1" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_1"/>
+            <field name="quantity">5</field>
+            <field name="source_location_id" ref="inventory_location_1"/>
+            <field name="destination_location_id" ref="inventory_location_2"/>
+            <field name="movement_date">2024-09-01 10:00:00</field>
 
-        <record id="inventory_location_office" model="inventory.location">
-            <field name="name">Office Storage</field>
-            <field name="address">789 Office Blvd, City, Country</field>
-            <field name="capacity" eval="200"/>
         </record>
+        <record id="inventory_movement_2" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_2"/>
+            <field name="quantity">10</field>
+            <field name="source_location_id" ref="inventory_location_1"/>
+            <field name="destination_location_id" ref="inventory_location_3"/>
+            <field name="movement_date">2024-09-02 12:30:00</field>
 
+        </record>
+        <record id="inventory_movement_3" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_3"/>
+            <field name="quantity">8</field>
+            <field name="source_location_id" ref="inventory_location_2"/>
+            <field name="destination_location_id" ref="inventory_location_4"/>
+            <field name="movement_date">2024-09-03 14:15:00</field>
+
+        </record>
+        <record id="inventory_movement_4" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_4"/>
+            <field name="quantity">3</field>
+            <field name="source_location_id" ref="inventory_location_3"/>
+            <field name="destination_location_id" ref="inventory_location_1"/>
+            <field name="movement_date">2024-09-04 09:45:00</field>
+
+        </record>
+        <record id="inventory_movement_5" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_5"/>
+            <field name="quantity">6</field>
+            <field name="source_location_id" ref="inventory_location_1"/>
+            <field name="destination_location_id" ref="inventory_location_5"/>
+            <field name="movement_date">2024-09-05 11:00:00</field>
+
+        </record>
+        <record id="inventory_movement_6" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_6"/>
+            <field name="quantity">2</field>
+            <field name="source_location_id" ref="inventory_location_4"/>
+            <field name="destination_location_id" ref="inventory_location_2"/>
+            <field name="movement_date">2024-09-06 15:20:00</field>
+
+        </record>
+        <record id="inventory_movement_7" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_7"/>
+            <field name="quantity">4</field>
+            <field name="source_location_id" ref="inventory_location_2"/>
+            <field name="destination_location_id" ref="inventory_location_3"/>
+            <field name="movement_date">2024-09-07 08:30:00</field>
+
+        </record>
+        <record id="inventory_movement_8" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_8"/>
+            <field name="quantity">5</field>
+            <field name="source_location_id" ref="inventory_location_3"/>
+            <field name="destination_location_id" ref="inventory_location_4"/>
+            <field name="movement_date">2024-09-08 16:00:00</field>
+
+        </record>
+        <record id="inventory_movement_9" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_9"/>
+            <field name="quantity">7</field>
+            <field name="source_location_id" ref="inventory_location_4"/>
+            <field name="destination_location_id" ref="inventory_location_1"/>
+            <field name="movement_date">2024-09-09 10:15:00</field>
+
+        </record>
+        <record id="inventory_movement_10" model="inventory.movement">
+            <field name="product_id" ref="inventory_item_10"/>
+            <field name="quantity">3</field>
+            <field name="source_location_id" ref="inventory_location_1"/>
+            <field name="destination_location_id" ref="inventory_location_5"/>
+            <field name="movement_date">2024-09-10 13:45:00</field>
+        </record>
 
     </data>
 </odoo>

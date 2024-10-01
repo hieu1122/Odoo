@@ -4,6 +4,7 @@ class InventoryItem(models.Model):
     _name = 'inventory.item'
     _description = 'Inventory Item'
 
+    item_id=fields.Many2one('inventory.item')
     name = fields.Char(string='Item Name', required=True)
     description = fields.Text(string='Description')
     quantity = fields.Integer(string='Quantity', required=True, default=0)

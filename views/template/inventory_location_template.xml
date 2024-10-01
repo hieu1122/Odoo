@@ -2,8 +2,8 @@
     <template id="inventory_location_template">
         <t t-call="website.layout">
             <div class="container">
-                <h1>Inventory Locations</h1>
-                <t t-if="locations">
+                <h1>Inventory location</h1>
+                <t t-if="location">
                     <table class="table">
                         <thead>
                             <tr>
@@ -13,7 +13,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="locations" t-as="location">
+                            <t t-foreach="location" t-as="location">
                                 <tr>
                                     <td>
                                         <t t-esc="location.name"/>

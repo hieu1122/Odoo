@@ -1,0 +1,66 @@
+<odoo>
+    <template id="inventory_item_template">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Inventory Items</h1>
+
+                <t t-if="message">
+                    <div class="alert alert-success">
+                        <t t-esc="message"/>
+                    </div>
+                </t>
+
+                <div>
+                    <a href="/inventory/item/add" class="btn btn-primary">Create Item</a>
+                </div>
+                <t t-if="items">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Reorder Level</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="items" t-as="item">
+                                <tr>
+                                    <td>
+                                        <t t-esc="item.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.description"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.quantity"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.reorder_level"/>
+                                    </td>
+                                    <td>
+                                        <a t-att-href="'/inventory/item/update/' + str(item.id)"
+                                           class="btn btn-warning">Update
+                                        </a>
+                                        <!-- Nút Xóa -->
+                                        <form t-att-action="'/inventory/item/delete/%d' % item.id"   method="post" style="display:inline;">
+                                            <input type="hidden" name="item_id" t-att-value="item.id"/>
+                                            <button type="submit" class="btn btn-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this item?');">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-else="">
+                    <p>No items found.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

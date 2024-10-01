@@ -1,0 +1,31 @@
+<odoo>
+    <template id="inventory_item_update_template">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Update Inventory Item</h1>
+                <form t-att-action="'/inventory/item/save/%d' % item.id" method="post">
+                    <div class="form-group">
+                        <label for="name">Item Name:</label>
+                        <input type="text" id="name" name="name" class="form-control"
+                               t-att-value="item.name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" class="form-control"><t t-esc="item.description"/></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" class="form-control"
+                               t-att-value="item.quantity" />
+                    </div>
+                    <div class="form-group">
+                        <label for="reorder_level">Reorder Level:</label>
+                        <input type="number" id="reorder_level" name="reorder_level" class="form-control"
+                               t-att-value="item.reorder_level" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Item</button>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

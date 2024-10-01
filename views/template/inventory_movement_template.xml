@@ -2,8 +2,8 @@
     <template id="inventory_movement_template">
         <t t-call="website.layout">
             <div class="container">
-                <h1>Inventory Movements</h1>
-                <t t-if="movements">
+                <h1>Inventory movement</h1>
+                <t t-if="movement">
                     <table class="table">
                         <thead>
                             <tr>
@@ -15,7 +15,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="movements" t-as="movement">
+                            <t t-foreach="movement" t-as="movement">
                                 <tr>
                                     <td>
                                         <t t-esc="movement.product_id.name"/>
