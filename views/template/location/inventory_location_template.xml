@@ -1,0 +1,77 @@
+<odoo>
+    <template id="inventory_location_template">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Inventory locations</h1>
+
+                <t t-if="message">
+                    <div class="alert alert-success">
+                        <t t-esc="message"/>
+                    </div>
+                </t>
+
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <form action="/inventory/location" method="get" class="form-inline">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control"
+                                       placeholder="Search location name..."/>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="/inventory/location/add" class="btn btn-primary">Create location</a>
+                </div>
+                <t t-if="locations">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>location Name</th>
+                                <th>Address</th>
+                                <th>Capacity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="locations" t-as="location">
+                                <tr>
+                                    <td>
+                                        <t t-esc="location.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="location.address"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="location.capacity"/>
+                                    </td>
+                                    <td>
+                                        <a t-attf-href="/inventory/location/update/{{location.id}}"
+                                           class="btn btn-warning">Update
+                                        </a>
+                                        <form t-attf-action="/inventory/location/delete/{{location.id}}" method="post"
+                                              style="display:inline;">
+                                            <input type="hidden" name="location_id" t-att-value="location.id"/>
+                                            <button type="submit" class="btn btn-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this location?');">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-else="">
+                    <p>No locations found.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

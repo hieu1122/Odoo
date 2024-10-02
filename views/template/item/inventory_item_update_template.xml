@@ -3,7 +3,7 @@
         <t t-call="website.layout">
             <div class="container">
                 <h1>Update Inventory Item</h1>
-                <form t-att-action="'/inventory/item/save/%d' % item.id" method="post">
+                <form t-attf-action="/inventory/item/save/{{item.id}}" method="post">
                     <div class="form-group">
                         <label for="name">Item Name:</label>
                         <input type="text" id="name" name="name" class="form-control"

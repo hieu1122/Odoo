@@ -147,7 +147,6 @@
         <!-- Dữ liệu cho Inventory Movement -->
         <!-- Dữ liệu cho Inventory Movement -->
         <record id="inventory_movement_1" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_1"/>
             <field name="quantity">5</field>
             <field name="source_location_id" ref="inventory_location_1"/>
             <field name="destination_location_id" ref="inventory_location_2"/>
@@ -155,7 +154,6 @@
 
         </record>
         <record id="inventory_movement_2" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_2"/>
             <field name="quantity">10</field>
             <field name="source_location_id" ref="inventory_location_1"/>
             <field name="destination_location_id" ref="inventory_location_3"/>
@@ -163,7 +161,6 @@
 
         </record>
         <record id="inventory_movement_3" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_3"/>
             <field name="quantity">8</field>
             <field name="source_location_id" ref="inventory_location_2"/>
             <field name="destination_location_id" ref="inventory_location_4"/>
@@ -171,7 +168,6 @@
 
         </record>
         <record id="inventory_movement_4" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_4"/>
             <field name="quantity">3</field>
             <field name="source_location_id" ref="inventory_location_3"/>
             <field name="destination_location_id" ref="inventory_location_1"/>
@@ -179,7 +175,6 @@
 
         </record>
         <record id="inventory_movement_5" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_5"/>
             <field name="quantity">6</field>
             <field name="source_location_id" ref="inventory_location_1"/>
             <field name="destination_location_id" ref="inventory_location_5"/>
@@ -187,7 +182,6 @@
 
         </record>
         <record id="inventory_movement_6" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_6"/>
             <field name="quantity">2</field>
             <field name="source_location_id" ref="inventory_location_4"/>
             <field name="destination_location_id" ref="inventory_location_2"/>
@@ -195,7 +189,6 @@
 
         </record>
         <record id="inventory_movement_7" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_7"/>
             <field name="quantity">4</field>
             <field name="source_location_id" ref="inventory_location_2"/>
             <field name="destination_location_id" ref="inventory_location_3"/>
@@ -203,7 +196,6 @@
 
         </record>
         <record id="inventory_movement_8" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_8"/>
             <field name="quantity">5</field>
             <field name="source_location_id" ref="inventory_location_3"/>
             <field name="destination_location_id" ref="inventory_location_4"/>
@@ -211,7 +203,6 @@
 
         </record>
         <record id="inventory_movement_9" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_9"/>
             <field name="quantity">7</field>
             <field name="source_location_id" ref="inventory_location_4"/>
             <field name="destination_location_id" ref="inventory_location_1"/>
@@ -219,12 +210,10 @@
 
         </record>
         <record id="inventory_movement_10" model="inventory.movement">
-            <field name="product_id" ref="inventory_item_10"/>
             <field name="quantity">3</field>
             <field name="source_location_id" ref="inventory_location_1"/>
             <field name="destination_location_id" ref="inventory_location_5"/>
             <field name="movement_date">2024-09-10 13:45:00</field>
         </record>
-
     </data>
 </odoo>

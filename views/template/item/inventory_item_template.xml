@@ -10,6 +10,21 @@
                     </div>
                 </t>
 
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <form action="/inventory/item" method="get" class="form-inline">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control"
+                                       placeholder="Search item name..."/>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
                 <div>
                     <a href="/inventory/item/add" class="btn btn-primary">Create Item</a>
                 </div>
@@ -40,11 +55,12 @@
                                         <t t-esc="item.reorder_level"/>
                                     </td>
                                     <td>
-                                        <a t-att-href="'/inventory/item/update/' + str(item.id)"
+                                        <a t-attf-href="/inventory/item/update/{{item.id}}"
                                            class="btn btn-warning">Update
                                         </a>
                                         <!-- Nút Xóa -->
-                                        <form t-att-action="'/inventory/item/delete/%d' % item.id"   method="post" style="display:inline;">
+                                        <form t-attf-action="'/inventory/item/delete/{{item.id}}" method="post"
+                                              style="display:inline;">
                                             <input type="hidden" name="item_id" t-att-value="item.id"/>
                                             <button type="submit" class="btn btn-danger"
                                                     onclick="return confirm('Are you sure you want to delete this item?');">

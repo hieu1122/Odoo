@@ -19,12 +19,16 @@
 
         'views/inventory_management_menus.xml',
 
-        'views/template/inventory_item_template.xml',
-        'views/template/inventory_location_template.xml',
-        'views/template/inventory_movement_template.xml',
+        'views/template/item/inventory_item_template.xml',
+        'views/template/item/inventory_item_add_template.xml',
+        'views/template/item/inventory_item_update_template.xml',
 
-        'views/template/inventory_item_add_template.xml',
-        'views/template/inventory_item_update_template.xml',
+        'views/template/location/inventory_location_template.xml',
+        'views/template/location/inventory_location_add_template.xml',
+        'views/template/location/inventory_location_update_template.xml',
 
+        'views/template/movement/inventory_movement_template.xml',
+        'views/template/movement/inventory_movement_add_template.xml',
+        'views/template/movement/inventory_movement_update_template.xml',
     ],
 }

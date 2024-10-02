@@ -1,87 +1,31 @@
 <odoo>
-    <!-- Record rule for Inventory Item -->
-    <record id="inventory_management_item_rule_user" model="ir.rule">
-        <field name="name">Inventory Item User Rule</field>
+
+    <record id="inventory_management_item_rule" model="ir.rule">
+        <field name="name">Inventory Item Rule</field>
         <field name="model_id" ref="model_inventory_item"/>
-        <field name="domain_force">[('user_id', '=', user.id)]</field>
-        <field name="groups" eval="[(4, ref('group_inventory_management_user'))]"/>
+        <field name="domain_force">
+            ['|', ('user_id', '=', user.id), ('user_id', '=', False)]
+        </field>
+        <field name="groups" eval="[(4, ref('group_inventory_management_user')), (4, ref('group_inventory_management_manager'))]"/>
     </record>
 
-    <record id="inventory_management_item_rule_manager" model="ir.rule">
-        <field name="name">Inventory Item Manager Rule</field>
-        <field name="model_id" ref="model_inventory_item"/>
-        <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('group_inventory_management_manager'))]"/>
-    </record>
 
-    <!-- Record rule for Inventory Location -->
-    <record id="inventory_management_location_rule_user" model="ir.rule">
-        <field name="name">Inventory Location User Rule</field>
+    <record id="inventory_management_location_rule" model="ir.rule">
+        <field name="name">Inventory Location Rule</field>
         <field name="model_id" ref="model_inventory_location"/>
-        <field name="domain_force">[('user_id', '=', user.id)]</field>
-        <field name="groups" eval="[(4, ref('group_inventory_management_user'))]"/>
+        <field name="domain_force">
+            ['|', ('user_id', '=', user.id), ('user_id', '=', False)]
+        </field>
+        <field name="groups" eval="[(4, ref('group_inventory_management_user')), (4, ref('group_inventory_management_manager'))]"/>
     </record>
 
-    <record id="inventory_management_location_rule_manager" model="ir.rule">
-        <field name="name">Inventory Location Manager Rule</field>
-        <field name="model_id" ref="model_inventory_location"/>
-        <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('group_inventory_management_manager'))]"/>
-    </record>
 
-    <!-- Record rule for Inventory Movement -->
-    <record id="inventory_management_movement_rule_user" model="ir.rule">
-        <field name="name">Inventory Movement User Rule</field>
+    <record id="inventory_management_movement_rule" model="ir.rule">
+        <field name="name">Inventory Movement Rule</field>
         <field name="model_id" ref="model_inventory_movement"/>
-        <field name="domain_force">[('user_id', '=', user.id)]</field>
-        <field name="groups" eval="[(4, ref('group_inventory_management_user'))]"/>
-    </record>
-
-    <record id="inventory_management_movement_rule_manager" model="ir.rule">
-        <field name="name">Inventory Movement Manager Rule</field>
-        <field name="model_id" ref="model_inventory_movement"/>
-        <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('group_inventory_management_manager'))]"/>
+        <field name="domain_force">
+            ['|', ('user_id', '=', user.id), ('user_id', '=', False)]
+        </field>
+        <field name="groups" eval="[(4, ref('group_inventory_management_user')), (4, ref('group_inventory_management_manager'))]"/>
     </record>
 </odoo>
-
-<!--<odoo>-->
-<!--    &lt;!&ndash; Record rule for Inventory Item &ndash;&gt;-->
-<!--    <record id="inventory_management_item_rule_user" model="ir.model.access">-->
-<!--        <field name="name">Inventory Item User Rule</field>-->
-<!--        <field name="model_id" ref="model_inventory_item"/>-->
-<!--        <field name="group_id" ref="group_inventory_management_user"/>-->
-<!--    </record>-->
-
-<!--    <record id="inventory_management_item_rule_manager" model="ir.model.access">-->
-<!--        <field name="name">Inventory Item Manager Rule</field>-->
-<!--        <field name="model_id" ref="model_inventory_item"/>-->
-<!--        <field name="group_id" ref="group_inventory_management_manager"/>-->
-<!--    </record>-->
-
-<!--    &lt;!&ndash; Record rule for Inventory Location &ndash;&gt;-->
-<!--    <record id="inventory_management_location_rule_user" model="ir.model.access">-->
-<!--        <field name="name">Inventory Location User Rule</field>-->
-<!--        <field name="model_id" ref="model_inventory_location"/>-->
-<!--        <field name="group_id" ref="group_inventory_management_user"/>-->
-<!--    </record>-->
-
-<!--    <record id="inventory_management_location_rule_manager" model="ir.model.access">-->
-<!--        <field name="name">Inventory Location Manager Rule</field>-->
-<!--        <field name="model_id" ref="model_inventory_location"/>-->
-<!--        <field name="group_id" ref="group_inventory_management_manager"/>-->
-<!--    </record>-->
-
-<!--    &lt;!&ndash; Record rule for Inventory Movement &ndash;&gt;-->
-<!--    <record id="inventory_management_movement_rule_user" model="ir.model.access">-->
-<!--        <field name="name">Inventory Movement User Rule</field>-->
-<!--        <field name="model_id" ref="model_inventory_movement"/>-->
-<!--        <field name="group_id" ref="group_inventory_management_user"/>-->
-<!--    </record>-->
-
-<!--    <record id="inventory_management_movement_rule_manager" model="ir.model.access">-->
-<!--        <field name="name">Inventory Movement Manager Rule</field>-->
-<!--        <field name="model_id" ref="model_inventory_movement"/>-->
-<!--        <field name="group_id" ref="group_inventory_management_manager"/>-->
-<!--    </record>-->
-<!--</odoo>-->

@@ -1,0 +1,81 @@
+<odoo>
+    <template id="inventory_movement_template">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Inventory movements</h1>
+
+                <t t-if="message">
+                    <div class="alert alert-success">
+                        <t t-esc="message"/>
+                    </div>
+                </t>
+
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <form action="/inventory/movement" method="get" class="form-inline">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control"
+                                       placeholder="Search movement name..."/>
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="/inventory/movement/add" class="btn btn-primary">Create movement</a>
+                </div>
+                <t t-if="movements">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Quantity</th>
+                                <th>Source Location</th>
+                                <th>Destination Location</th>
+                                <th>Movement Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="movements" t-as="movement">
+                                <tr>
+                                    <td>
+                                        <t t-esc="movement.quantity"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="movement.source_location_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="movement.destination_location_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="movement.movement_date"/>
+                                    </td>
+                                    <td>
+                                        <a t-attf-href="/inventory/movement/update/{{movement.id}}"
+                                           class="btn btn-warning">Update
+                                        </a>
+                                        <form t-attf-action="/inventory/movement/delete/{{movement.id}}" method="post"
+                                              style="display:inline;">
+                                            <input type="hidden" name="movement_id" t-att-value="movement.id"/>
+                                            <button type="submit" class="btn btn-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this movement?');">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-else="">
+                    <p>No movements found.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>
